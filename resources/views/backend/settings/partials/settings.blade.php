@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header">
-        <h2>General Settings
-            <small>Overview of configuration options for your site.</small>
+        <h2>基本设置
+            <small>网站基本配置总览。</small>
         </h2>
     </div>
     <div class="card-body card-padding">

@@ -1,7 +1,7 @@
 @extends('canvas::backend.layout')
 
 @section('title')
-    <title>{{ \Canvas\Models\Settings::blogTitle() }} | Home</title>
+    <title>{{ \Canvas\Models\Settings::blogTitle() }} | 首页</title>
 @stop
 
 @section('content')

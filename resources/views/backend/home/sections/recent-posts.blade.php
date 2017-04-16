@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header">
-        <h2>Recent Activity
-            <small>Last 4 published blog posts:</small>
+        <h2>最近更新
+            <small>最近更新的4篇文章：</small>
         </h2>
 
         <br>

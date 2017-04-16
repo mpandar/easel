@@ -29,7 +29,7 @@
 
 <div class="form-group">
     <div class="fg-line">
-        <label class="fg-label">Job</label>
+        <label class="fg-label">工作</label>
         <input type="text" class="form-control" name="job" id="job" value="{{ $data['job'] }}" placeholder="Job">
     </div>
 </div>
@@ -38,7 +38,7 @@
 
 <div class="form-group">
     <div class="fg-line">
-        <label class="fg-label">Gender</label>
+        <label class="fg-label">性别</label>
         <select name="gender" id="gender" class="selectpicker">
             <option @if($data['gender'] == null) selected @endif value="">Please select one</option>
             <option @if ($data['gender'] === 'Male') selected @endif value="Male">Male</option>

@@ -20,17 +20,17 @@
                     <a data-toggle="dropdown" href=""><i class="tm-icon zmdi zmdi-more-vert"></i></a>
                     <ul class="dropdown-menu dm-icon pull-right">
                         <li class="hidden-xs">
-                            <a href="{!! route('canvas.admin.profile.index') !!}"><i class="zmdi zmdi-account"></i> Your Profile</a>
+                            <a href="{!! route('canvas.admin.profile.index') !!}"><i class="zmdi zmdi-account"></i> 个人中心</a>
                         </li>
                         <li class="hidden-xs">
-                            <a target="_blank" href="{!! route('canvas.home') !!}"><i class="zmdi zmdi-view-web"></i> View Site</a>
+                            <a target="_blank" href="{!! route('canvas.home') !!}"><i class="zmdi zmdi-view-web"></i> 网站前台</a>
                         </li>
                         <li class="hidden-xs">
-                            <a data-action="fullscreen" href=""><i class="zmdi zmdi-fullscreen"></i> Toggle Fullscreen</a>
+                            <a data-action="fullscreen" href=""><i class="zmdi zmdi-fullscreen"></i> 全屏</a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="{!! route('canvas.auth.logout') !!}"><i class="zmdi zmdi-power"></i> Sign out</a>
+                            <a href="{!! route('canvas.auth.logout') !!}"><i class="zmdi zmdi-power"></i> 退出</a>
                         </li>
                     </ul>
                 </li>

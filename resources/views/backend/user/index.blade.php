@@ -1,7 +1,7 @@
 @extends('canvas::backend.layout')
 
 @section('title')
-    <title>{{ \Canvas\Models\Settings::blogTitle() }} | Users</title>
+    <title>{{ \Canvas\Models\Settings::blogTitle() }} | 用户</title>
 @stop
 
 @section('content')
@@ -12,8 +12,8 @@
                 <div class="card">
                     <div class="card-header">
                         <ol class="breadcrumb">
-                            <li><a href="{!! route('canvas.admin') !!}">Home</a></li>
-                            <li class="active">Users</li>
+                            <li><a href="{!! route('canvas.admin') !!}">首页</a></li>
+                            <li class="active">用户</li>
                         </ol>
                         <ul class="actions">
                             <li class="dropdown">
@@ -22,17 +22,17 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     <li>
-                                        <a href="{!! route('canvas.admin.user.index') !!}"><i class="zmdi zmdi-refresh-alt pd-r-5"></i> Refresh Users</a>
+                                        <a href="{!! route('canvas.admin.user.index') !!}"><i class="zmdi zmdi-refresh-alt pd-r-5"></i> 刷新用户</a>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
                         @include('canvas::backend.shared.partials.errors')
                         @include('canvas::backend.shared.partials.success')
-                        <h2>Users&nbsp;
+                        <h2>用户&nbsp;
                             <a href="{!! route('canvas.admin.user.create') !!}" id="create-user"><i class="zmdi zmdi-plus-circle" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Create a new user"></i></a>
 
-                            <small>This page provides a comprehensive overview of all the current users. Click the <span class="zmdi zmdi-edit text-primary"></span> icon next to each user to update their site access or remove them from the system.</small>
+                            <small>本页包含所有注册用户。点击 <span class="zmdi zmdi-edit text-primary"></span> 图标更新内容或删除用户。</small>
                         </h2>
                     </div>
 
@@ -41,11 +41,11 @@
                             <thead>
                             <tr>
                                 <th data-column-id="id" data-type="numeric" data-order="asc">ID</th>
-                                <th data-column-id="display_name">Name</th>
-                                <th data-column-id="email">Email</th>
-                                <th data-column-id="role">Role</th>
-                                <th data-column-id="posts">Posts</th>
-                                <th data-column-id="commands" data-formatter="commands" data-sortable="false">Actions</th>
+                                <th data-column-id="display_name">姓名</th>
+                                <th data-column-id="email">邮箱</th>
+                                <th data-column-id="role">角色</th>
+                                <th data-column-id="posts">文章</th>
+                                <th data-column-id="commands" data-formatter="commands" data-sortable="false">操作</th>
                             </tr>
                             </thead>
                             <tbody>

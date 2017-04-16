@@ -1,7 +1,7 @@
 @extends('canvas::backend.layout')
 
 @section('title')
-    <title>{{ \Canvas\Models\Settings::blogTitle() }} | New Tag</title>
+    <title>{{ \Canvas\Models\Settings::blogTitle() }} | 创建标签</title>
 @stop
 
 @section('content')
@@ -12,13 +12,13 @@
                 <div class="card">
                     <div class="card-header">
                         <ol class="breadcrumb">
-                            <li><a href="{!! route('canvas.admin') !!}">Home</a></li>
-                            <li><a href="{!! route('canvas.admin.tag.index') !!}">Tags</a></li>
-                            <li class="active">New Tag</li>
+                            <li><a href="{!! route('canvas.admin') !!}">首页</a></li>
+                            <li><a href="{!! route('canvas.admin.tag.index') !!}">标签</a></li>
+                            <li class="active">创建标签</li>
                         </ol>
                         @include('canvas::backend.shared.partials.errors')
                         @include('canvas::backend.shared.partials.success')
-                        <h2>Create a New Tag</h2>
+                        <h2>创建一个标签</h2>
                     </div>
                     <div class="card-body card-padding">
                         <form class="keyboard-save" role="form" method="POST" id="tagUpdate" action="{!! route('canvas.admin.tag.index') !!}">
@@ -27,9 +27,9 @@
                             @include('canvas::backend.tag.partials.form')
 
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary btn-icon-text"><i class="zmdi zmdi-floppy"></i> Save</button>
+                                <button type="submit" class="btn btn-primary btn-icon-text"><i class="zmdi zmdi-floppy"></i> 保存</button>
                                 &nbsp;
-                                <a href="{!! route('canvas.admin.tag.index') !!}"><button type="button" class="btn btn-link">Cancel</button></a>
+                                <a href="{!! route('canvas.admin.tag.index') !!}"><button type="button" class="btn btn-link">取消</button></a>
                             </div>
                         </form>
                     </div>

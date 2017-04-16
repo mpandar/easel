@@ -1,7 +1,7 @@
 @extends('canvas::backend.layout')
 
 @section('title')
-    <title>{{ \Canvas\Models\Settings::blogTitle() }} | Tags</title>
+    <title>{{ \Canvas\Models\Settings::blogTitle() }} | 标签</title>
 @stop
 
 @section('content')
@@ -12,8 +12,8 @@
                 <div class="card">
                     <div class="card-header">
                         <ol class="breadcrumb">
-                            <li><a href="{!! route('canvas.admin') !!}">Home</a></li>
-                            <li class="active">Tags</li>
+                            <li><a href="{!! route('canvas.admin') !!}">首页</a></li>
+                            <li class="active">标签</li>
                         </ol>
                         <ul class="actions">
                             <li class="dropdown">
@@ -22,16 +22,16 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     <li>
-                                        <a href="{!! route('canvas.admin.tag.index') !!}"><i class="zmdi zmdi-refresh-alt pd-r-5"></i> Refresh Tags</a>
+                                        <a href="{!! route('canvas.admin.tag.index') !!}"><i class="zmdi zmdi-refresh-alt pd-r-5"></i> 刷新标签</a>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
                         @include('canvas::backend.shared.partials.errors')
                         @include('canvas::backend.shared.partials.success')
-                        <h2>Tags&nbsp;
+                        <h2>标签&nbsp;
                             <a href="{!! route('canvas.admin.tag.create') !!}" id="create-tag"><i class="zmdi zmdi-plus-circle" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Create a new tag"></i></a>
-                            <small>This page provides a comprehensive overview of all your blog tags. Click the <span class="zmdi zmdi-edit text-primary"></span> icon next to each tag to update its contents.</small>
+                            <small>本页面提供你所有标签。点击 <span class="zmdi zmdi-edit text-primary"></span> 图标更新你的内容。</small>
                         </h2>
                     </div>
 
@@ -40,12 +40,12 @@
                             <thead>
                                 <tr>
                                     <th data-column-id="id" data-type="numeric" data-order="desc">Id</th>
-                                    <th data-column-id="title">Title</th>
-                                    <th data-column-id="subtitle">Subtitle</th>
-                                    <th data-column-id="layout">Layout</th>
-                                    <th data-column-id="direction">Direction</th>
-                                    <th data-column-id="created" data-type="date">Created</th>
-                                    <th data-column-id="commands" data-formatter="commands" data-sortable="false">Actions</th>
+                                    <th data-column-id="title">标题</th>
+                                    <th data-column-id="subtitle">副标题</th>
+                                    <th data-column-id="layout">布局</th>
+                                    <th data-column-id="direction">方向</th>
+                                    <th data-column-id="created" data-type="date">创建时间</th>
+                                    <th data-column-id="commands" data-formatter="commands" data-sortable="false">操作</th>
                                 </tr>
                             </thead>
                             <tbody>

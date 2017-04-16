@@ -1,7 +1,7 @@
 @extends('canvas::backend.profile.layout')
 
 @section('title')
-    <title>{{ \Canvas\Models\Settings::blogTitle() }} | Profile</title>
+    <title>{{ \Canvas\Models\Settings::blogTitle() }} | 用户配置</title>
 @stop
 
 @section('profile-content')
@@ -13,7 +13,7 @@
 
         <div class="pmb-block">
             <div class="pmbb-header">
-                <h2><i class="zmdi zmdi-equalizer m-r-10"></i> Edit Summary</h2>
+                <h2><i class="zmdi zmdi-equalizer m-r-10"></i> 编辑个人简介</h2>
             </div>
             <div class="pmbb-body p-l-30">
                 @include('canvas::backend.profile.partials.form.summary')
@@ -22,7 +22,7 @@
 
         <div class="pmb-block">
             <div class="pmbb-header">
-                <h2><i class="zmdi zmdi-account m-r-10"></i> Edit Basic Information</h2>
+                <h2><i class="zmdi zmdi-account m-r-10"></i> 编辑基本信息</h2>
             </div>
             <div class="pmbb-body p-l-30">
                 @include('canvas::backend.profile.partials.form.basic-information')
@@ -31,7 +31,7 @@
 
         <div class="pmb-block">
             <div class="pmbb-header">
-                <h2><i class="zmdi zmdi-phone m-r-10"></i> Edit Contact Information</h2>
+                <h2><i class="zmdi zmdi-phone m-r-10"></i> 编辑联系方式</h2>
             </div>
             <div class="pmbb-body p-l-30">
                 @include('canvas::backend.profile.partials.form.contact-information')
@@ -40,14 +40,14 @@
 
         <div class="pmb-block">
             <div class="pmbb-header">
-                <h2><i class="zmdi zmdi-accounts m-r-10"></i> Edit Social Networks</h2>
+                <h2><i class="zmdi zmdi-accounts m-r-10"></i> 编辑社交网路</h2>
             </div>
             <div class="pmbb-body p-l-30">
                 @include('canvas::backend.profile.partials.form.social-networks')
             </div>
             <div class="form-group m-l-30">
-                <button type="submit" class="btn btn-primary btn-icon-text"><i class="zmdi zmdi-floppy"></i> Save</button>
-                <a href="{!! route('canvas.admin.user.index') !!}" class="btn btn-link btn-default">Cancel</a>
+                <button type="submit" class="btn btn-primary btn-icon-text"><i class="zmdi zmdi-floppy"></i> 保存</button>
+                <a href="{!! route('canvas.admin.user.index') !!}" class="btn btn-link btn-default">取消</a>
             </div>
         </div>
     </form>

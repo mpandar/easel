@@ -1,7 +1,7 @@
 @extends('canvas::backend.layout')
 
 @section('title')
-    <title>{{ \Canvas\Models\Settings::blogTitle() }} | Settings</title>
+    <title>{{ \Canvas\Models\Settings::blogTitle() }} | 设置</title>
 @stop
 
 @section('content')
@@ -18,7 +18,7 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <li>
-                                    <a href="{!! route('canvas.admin.settings') !!}"><i class="zmdi zmdi-refresh-alt pd-r-5"></i> Refresh Settings</a>
+                                    <a href="{!! route('canvas.admin.settings') !!}"><i class="zmdi zmdi-refresh-alt pd-r-5"></i> 刷新页面</a>
                                 </li>
                             </ul>
                         </li>

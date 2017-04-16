@@ -1,7 +1,7 @@
 @extends('canvas::backend.layout')
 
 @section('title')
-    <title>{{ \Canvas\Models\Settings::blogTitle() }} | Edit User</title>
+    <title>{{ \Canvas\Models\Settings::blogTitle() }} | 编辑用户</title>
 @stop
 
 @section('content')
@@ -18,7 +18,7 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <li>
-                                    <a href="{!! route('canvas.admin.user.edit', $data['id']) !!}"><i class="zmdi zmdi-refresh-alt pd-r-5"></i> Refresh User</a>
+                                    <a href="{!! route('canvas.admin.user.edit', $data['id']) !!}"><i class="zmdi zmdi-refresh-alt pd-r-5"></i> 刷新用户</a>
                                 </li>
                             </ul>
                         </li>
@@ -29,10 +29,10 @@
                     <div class="pm-body clearfix">
                         <ul class="tab-nav tn-justified">
                             <li class="{{ Route::is('canvas.admin.user.edit') ? 'active' : '' }}">
-                                <a href="{{ route('canvas.admin.user.edit', $data['id']) }}">Profile</a>
+                                <a href="{{ route('canvas.admin.user.edit', $data['id']) }}">基本信息</a>
                             </li>
                             <li class="{{ Route::is('canvas.admin.user.privacy') ? 'active' : '' }}">
-                                <a href="{!! route('canvas.admin.user.privacy', $data['id']) !!}">Privacy</a>
+                                <a href="{!! route('canvas.admin.user.privacy', $data['id']) !!}">隐私</a>
                             </li>
                         </ul>
                         @if(Session::has('errors') || Session::has('success'))

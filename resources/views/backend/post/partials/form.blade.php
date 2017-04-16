@@ -16,20 +16,20 @@
 
                     @if(Route::is('canvas.admin.post.create'))
                         <ol class="breadcrumb">
-                            <li><a href="{!! route('canvas.admin') !!}">Home</a></li>
-                            <li><a href="{!! route('canvas.admin.post.index') !!}">Posts</a></li>
-                            <li class="active">New Post</li>
+                            <li><a href="{!! route('canvas.admin') !!}">首页</a></li>
+                            <li><a href="{!! route('canvas.admin.post.index') !!}">文章</a></li>
+                            <li class="active">创建文章</li>
                         </ol>
-                        <h2>Create a New Post</h2>
+                        <h2>创建一个新文章</h2>
                     @else
                         <ol class="breadcrumb">
-                            <li><a href="{!! route('canvas.admin') !!}">Home</a></li>
-                            <li><a href="{!! route('canvas.admin.post.index') !!}">Posts</a></li>
-                            <li class="active">Edit Post</li>
+                            <li><a href="{!! route('canvas.admin') !!}">首页</a></li>
+                            <li><a href="{!! route('canvas.admin.post.index') !!}">文章</a></li>
+                            <li class="active">编辑文章</li>
                         </ol>
                         <h2>
                             Edit <em>{!! $title !!}</em>
-                            <small>Last edited on {!! $updated_at->format('M d, Y') !!} at {!! $updated_at->format('g:i A') !!}</small>
+                            <small>最近更新{!! $updated_at->format('M d, Y') !!} at {!! $updated_at->format('g:i A') !!}</small>
                         </h2>
                     @endif
                 </div>
@@ -64,30 +64,30 @@
         <div class="col-md-4">
             <div class="card">
                 <div class="card-header">
-                    <h2>Publishing</h2>
+                    <h2>发布中</h2>
                     <hr>
                 </div>
                 <div class="card-body card-padding">
-                    <label><i class="zmdi zmdi-eye"></i>&nbsp;&nbsp;Status</label>
+                    <label><i class="zmdi zmdi-eye"></i>&nbsp;&nbsp;状态</label>
                     <div class="form-group" style="padding-top: 10px">
                         <div class="toggle-switch toggle-switch-demo" data-ts-color="blue">
-                            <label for="is_published" class="ts-label"><span class="label label-default">Draft</span></label>
+                            <label for="is_published" class="ts-label"><span class="label label-default">草稿</span></label>
                             <input {{ \Canvas\Helpers\CanvasHelper::checked($is_published) }} type="checkbox" name="is_published">
                             <label for="is_published" class="ts-helper"></label>
-                            <label for="is_published" class="ts-label" style="margin-left: 20px; margin-right: 0"><span class="label label-primary">Published</span></label>
+                            <label for="is_published" class="ts-label" style="margin-left: 20px; margin-right: 0"><span class="label label-primary">发布</span></label>
                         </div>
                     </div>
                     <br>
                     <div class="form-group">
                         <div class="fg-line">
-                            <label><i class="zmdi zmdi-calendar"></i>&nbsp;&nbsp;Published at</label>
+                            <label><i class="zmdi zmdi-calendar"></i>&nbsp;&nbsp;发布时间</label>
                             <input class="form-control datetime-picker" name="published_at" id="published_at" type="text" value="{{ $published_at }}" placeholder="YYYY/MM/DD HH:MM:SS" data-mask="0000/00/00 00:00:00">
                         </div>
                     </div>
                     <br>
                     <div class="form-group">
                         <div class="fg-line">
-                            <label class="fg-label"><i class="zmdi zmdi-view-web"></i>&nbsp;&nbsp;Layout</label>
+                            <label class="fg-label"><i class="zmdi zmdi-view-web"></i>&nbsp;&nbsp;布局</label>
                             <input type="text" class="form-control" name="layout" id="layout" value="{{ $layout }}" placeholder="Layout" disabled>
                         </div>
                     </div>
@@ -104,19 +104,19 @@
                     <div class="form-group">
                         @if(Route::is('canvas.admin.post.create'))
                             <button type="submit" class="btn btn-primary btn-icon-text">
-                                <i class="zmdi zmdi-floppy"></i> Publish
+                                <i class="zmdi zmdi-floppy"></i> 发布
                             </button>
                             &nbsp;
                             <a href="{!! route('canvas.admin.post.index') !!}">
-                                <button type="button" class="btn btn-link">Cancel</button>
+                                <button type="button" class="btn btn-link">取消</button>
                             </a>
                         @else
                             <button type="submit" class="btn btn-primary btn-icon-text" name="action" value="continue">
-                                <i class="zmdi zmdi-floppy"></i> Update
+                                <i class="zmdi zmdi-floppy"></i> 更新
                             </button>
                             &nbsp;
                             <button type="button" class="btn btn-danger btn-icon-text" data-toggle="modal" data-target="#modal-delete" id="confirmDelete">
-                                <i class="zmdi zmdi-delete"></i> Delete
+                                <i class="zmdi zmdi-delete"></i> 删除
                             </button>
                         @endif
                     </div>
@@ -124,7 +124,7 @@
             </div>
             <div class="card">
                 <div class="card-header">
-                    <h2>Featured Image</h2>
+                    <h2>特色图片</h2>
                     <hr>
                 </div>
                 <div class="card-body card-padding">
@@ -133,7 +133,7 @@
                             <div class="input-group">
                                 <input type="text" class="form-control" name="page_image" id="page_image" alt="Image thumbnail" placeholder="Page Image" v-model="pageImage">
                                 <span class="input-group-btn" style="margin-bottom: 11px">
-                        <button style="margin-bottom: -5px" type="button" class="btn btn-primary waves-effect" @click="openFromPageImage()">Select Image</button>
+                        <button style="margin-bottom: -5px" type="button" class="btn btn-primary waves-effect" @click="openFromPageImage()">选择图片</button>
                     </span>
                             </div>
                         </div>
@@ -141,13 +141,13 @@
                     <div class="visible-sm space-10"></div>
                     <div>
                         <img v-if="pageImage" class="img img-responsive" id="page-image-preview" style="margin-top: 3px; max-height:100px;" :src="pageImage">
-                        <span v-else class="text-muted small">No Image Selected</span>
+                        <span v-else class="text-muted small">未选择图片</span>
                     </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-header">
-                    <h2>Tags</h2>
+                    <h2>标签</h2>
                     <hr>
                 </div>
                 <div class="card-body card-padding">
@@ -164,7 +164,7 @@
             </div>
             <div class="card">
                 <div class="card-header">
-                    <h2>SEO Description</h2>
+                    <h2>SEO 描述</h2>
                     <hr>
                 </div>
                 <div class="card-body card-padding">

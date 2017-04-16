@@ -1,7 +1,7 @@
 @extends('canvas::backend.layout')
 
 @section('title')
-    <title>{{ \Canvas\Models\Settings::blogTitle() }} | Search</title>
+    <title>{{ \Canvas\Models\Settings::blogTitle() }} | 搜索</title>
 @stop
 
 @section('content')
@@ -12,10 +12,10 @@
                 <div class="card">
                     <div class="card-header">
                         <ol class="breadcrumb">
-                            <li><a href="{!! route('canvas.admin') !!}">Home</a></li>
-                            <li class="active">Search</li>
+                            <li><a href="{!! route('canvas.admin') !!}">首页</a></li>
+                            <li class="active">搜索</li>
                         </ol>
-                        <h2><i class="zmdi zmdi-search"></i> Search Results for <em>{{ request('search') }}</em></h2>
+                        <h2><i class="zmdi zmdi-search"></i> 关于 <em>{{ request('search') }}</em> 的搜索结果</h2>
                         <br>
                         <div class="table-responsive">
                             @include('canvas::backend.search.partials.results')

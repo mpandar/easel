@@ -1,7 +1,7 @@
 @extends('canvas::backend.layout')
 
 @section('title')
-    <title>{{ \Canvas\Models\Settings::blogTitle() }} | Edit Post</title>
+    <title>{{ \Canvas\Models\Settings::blogTitle() }} | 文章编辑</title>
 @stop
 
 @section('content')

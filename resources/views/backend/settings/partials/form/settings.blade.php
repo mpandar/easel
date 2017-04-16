@@ -5,7 +5,7 @@
 
     <div class="form-group">
         <div class="fg-line">
-            <label class="fg-label">Blog Title</label>
+            <label class="fg-label">网站标题</label>
             <input type="text" class="form-control" name="blog_title" id="blog_title" value="{{ $data['blogTitle'] }}" placeholder="Blog Title">
         </div>
     </div>
@@ -14,27 +14,27 @@
 
     <div class="form-group">
         <div class="fg-line">
-            <label class="fg-label">Blog Subtitle</label>
+            <label class="fg-label">网站副标题</label>
             <input type="text" class="form-control" name="blog_subtitle" id="blog_subtitle" value="{{ $data['blogSubtitle'] }}" placeholder="Blog Subtitle">
         </div>
-        <small>In a few words, explain what this site is about.</small>
+        <small>用几个词语，介绍你的网站。</small>
     </div>
 
     <br>
 
     <div class="form-group">
         <div class="fg-line">
-            <label class="fg-label">Blog Description</label>
+            <label class="fg-label">网站描述</label>
             <input type="text" class="form-control" name="blog_description" id="blog_description" value="{{ $data['blogDescription'] }}" placeholder="Blog Description">
         </div>
-        <small>Set the blog description that you would like to add to the <code>description</code> meta tag.</small>
+        <small>设置你的网站描述，这些描述将添加到网站的mate标签的<code>description</code>中。</small>
     </div>
 
     <br>
 
     <div class="form-group">
         <div class="fg-line">
-            <label class="fg-label">Blog SEO</label>
+            <label class="fg-label">网站SEO</label>
             <input type="text" class="form-control" name="blog_seo" id="blog_seo" value="{{ $data['blogSeo'] }}" placeholder="Blog SEO">
         </div>
         <small>Define in comma-delimited form the blog SEO tags that you want in the <code>keywords</code> meta tag.</small>
@@ -44,7 +44,7 @@
 
     <div class="form-group">
         <div class="fg-line">
-            <label class="fg-label">Blog Author</label>
+            <label class="fg-label">网站作者</label>
             <input type="text" class="form-control" name="blog_author" id="blog_author" value="{{ $data['blogAuthor'] }}" placeholder="Blog Author">
         </div>
         <small>Set the name that you want to appear in the <code>author</code> meta tag.</small>
@@ -78,7 +78,7 @@
 
     <div class="form-group">
         <div class="fg-line">
-            <label class="fg-label"><i class="zmdi zmdi-trending-up"></i> Google Analytics</label>
+            <label class="fg-label"><i class="zmdi zmdi-trending-up"></i> Google分析</label>
             <input type="text" class="form-control" name="ga_id" id="ga_id" value="{{ $data['analytics'] }}" placeholder="Google Analytics Tracking ID">
         </div>
         <small>Enter your Google Analytics Tracking ID or <a href="https://cnvs.readme.io/docs/advanced-options#section-google-analytics" target="_blank">learn more about this option</a>.</small>
@@ -102,7 +102,7 @@
 
     <div class="form-group">
         <div class="fg-line">
-            <label class="fg-label"><i class="zmdi zmdi-invert-colors"></i> Theme</label>
+            <label class="fg-label"><i class="zmdi zmdi-invert-colors"></i> 主题</label>
             <select name="theme" id="theme" class="selectpicker">
                 <option @if ($data['active_theme'] == "default") selected @endif value="default">{!! $data['default_theme_name'] !!}</option>
                 @foreach($data['themes'] as $themeId => $themeName)
@@ -117,7 +117,7 @@
 
     <div class="form-group">
         <div class="fg-line">
-            <label class="fg-label"><i class="zmdi zmdi-language-css3"></i> Custom CSS</label>
+            <label class="fg-label"><i class="zmdi zmdi-language-css3"></i> 自定义CSS</label>
             <textarea class="form-control" rows="10" name="custom_css" id="custom_css" style="resize: vertical" placeholder="Define your own CSS styles for the blog here.">{{ $data['custom_css'] }}</textarea>
         </div>
     </div>
@@ -126,7 +126,7 @@
 
     <div class="form-group">
         <div class="fg-line">
-            <label class="fg-label"><i class="zmdi zmdi-language-javascript"></i> Custom JS</label>
+            <label class="fg-label"><i class="zmdi zmdi-language-javascript"></i> 自定义JS</label>
             <textarea class="form-control" rows="10" name="custom_js" id="custom_js" style="resize: vertical" placeholder="Define your own JS scripts for the blog here.">{{ $data['custom_js'] }}</textarea>
         </div>
     </div>
@@ -134,6 +134,6 @@
     <br>
 
     <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-icon-text"><i class="zmdi zmdi-floppy"></i> Save Changes</button>
+        <button type="submit" class="btn btn-primary btn-icon-text"><i class="zmdi zmdi-floppy"></i> 保存</button>
     </div>
 </form>

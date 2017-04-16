@@ -10,16 +10,16 @@
                 </a>
             </div>
             <a href="http://gravatar.com" target="_blank" class="pmop-edit">
-                <i class="zmdi zmdi-camera"></i> <span class="hidden-xs">Update Profile Picture</span>
+                <i class="zmdi zmdi-camera"></i> <span class="hidden-xs">更新个人头像</span>
             </a>
         </div>
         <div class="pmo-stat">
             <h2 class="m-0 c-white">{{ $data['first_name'] }}</h2>
-            Member since {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $data['created_at'])->format('M d, Y') }}
+            加入日期 {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $data['created_at'])->format('M d, Y') }}
         </div>
     </div>
     <div class="pmo-block pmo-contact hidden-xs">
-        <h2>Contact Information</h2>
+        <h2>联系方式</h2>
         <ul>
             @if(isset($data['phone']) && strlen($data['phone']))
                 <li><i class="zmdi zmdi-phone"></i> {{ $data['phone'] }}</li>
@@ -47,7 +47,7 @@
 
     @if(isset($data['twitter']) && strlen($data['twitter']) || isset($data['facebook']) && strlen($data['facebook']) || isset($data['github']) && strlen($data['github']) || isset($data['linkedin']) && strlen($data['linkedin']) || isset($data['resume_cv']) && strlen($data['resume_cv']) || isset($data['url']) && strlen($data['url']))
         <div class="pmo-block pmo-contact hidden-xs">
-            <h2>Social Networks</h2>
+            <h2>社交</h2>
             <ul>
                 @if(isset($data['twitter']) && strlen($data['twitter']))
                     <li><i class="zmdi zmdi-twitter-box"></i> <a href="https://twitter.com/{{ $data['twitter'] }}" target="_blank">{{'@'.$data['twitter'] }}</a></li>
