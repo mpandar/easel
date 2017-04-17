@@ -1,6 +1,8 @@
 <meta charset="utf-8">
 
-<title>@yield('title')</title>
+{{--<title>@yield('title')</title>--}}
+<title>记录我的技术学习之路</title>
+
 
 <!-- SEO Tags -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
