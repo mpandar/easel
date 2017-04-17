@@ -8,14 +8,14 @@
                         <li class="previous">
                             <a href="{!! $post->olderPost($tag)->url($tag) !!}">
                                 <i class="fa fa-angle-left fa-lg"></i>
-                                Previous {{ $tag->tag }}
+                                上 {{ $tag->tag }}
                             </a>
                         </li>
                     @endif
                     @if ($post->newerPost($tag))
                         <li class="next">
                             <a href="{!! $post->newerPost($tag)->url($tag) !!}">
-                                Next {{ $tag->tag }}
+                                下 {{ $tag->tag }}
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
@@ -25,14 +25,14 @@
                         <li class="previous">
                             <a href="{!! $post->newerPost($tag)->url($tag) !!}">
                                 <i class="fa fa-angle-left fa-lg"></i>
-                                Newer
+                                下一篇
                             </a>
                         </li>
                     @endif
                     @if ($post->olderPost($tag))
                         <li class="next">
                             <a href="{!! $post->olderPost($tag)->url($tag) !!}">
-                                Older
+                                上一篇
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>

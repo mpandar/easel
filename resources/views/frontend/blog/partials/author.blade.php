@@ -5,7 +5,7 @@
         {{ $user->bio }}
         <br>
         @if (!empty($user->twitter))
-            <a href="https://twitter.com/{{ $user->twitter }}" target="_blank" id="social"><i class="fa fa-fw fa-twitter text-muted"></i></a>
+            <a href="https://twitter.com/{{ $user->twitter }}" target="_blank" id="social"><i class="fa fa-fw fa-weibo text-muted"></i></a>
         @endif
         @if (!empty($user->facebook))
             <a href="https://facebook.com/{{ $user->facebook }}" target="_blank" id="social"><i class="fa fa-fw fa-facebook text-muted"></i></a>

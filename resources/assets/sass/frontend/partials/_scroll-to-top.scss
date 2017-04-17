@@ -1,11 +1,11 @@
 #top-link-block {
 
   #scroll-to-top {
-    background-color: #0072C6 !important;
+    background-color: #888 !important;
     border-radius: 2em;
     font-size: 14px !important;
     color: #fff;
-    padding: .5em 1em;
+    padding:  .6em 1em;
     text-shadow: 1px 1px #888;
     transition: 1s all linear;
 
@@ -23,7 +23,7 @@
     right: 10px;
 
     @media only screen and (max-width: 680px) {
-      right: calc(50% - 4em);
+      right: calc(50% - 10em);
     }
 
   }
