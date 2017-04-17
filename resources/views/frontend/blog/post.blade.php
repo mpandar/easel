@@ -41,6 +41,12 @@
     </article>
 
     @include('canvas::frontend.blog.partials.paginate-post')
+    <div class="container">
+        @if(!empty(\Canvas\Models\Settings::disqus()))
+            @include('canvas::frontend.blog.partials.changyan')
+        @endif
+    </div>
+        
 @stop
 
 @section('unique-js')

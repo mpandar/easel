@@ -1,5 +1,5 @@
 <!--PC和WAP自适应版-->
-<div id="SOHUCS" sid="8a0e1c8aad72c12584139ac2ff5b9e7e" ></div> 
+<div id="SOHUCS" sid="{{$post->id}}" ></div> 
 <script type="text/javascript"> 
     (function(){ 
         var appid = 'cysX2HC5i'; 
