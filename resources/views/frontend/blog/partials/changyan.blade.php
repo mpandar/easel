@@ -1,5 +1,7 @@
 <!--PC和WAP自适应版-->
-<div id="SOHUCS" sid="{{$post->id}}" ></div> 
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div id="SOHUCS" sid="{{$post->id}}" ></div> 
+</div>
 <script type="text/javascript"> 
     (function(){ 
         var appid = 'cysX2HC5i'; 
