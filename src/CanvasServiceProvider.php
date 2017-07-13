@@ -13,6 +13,7 @@ use Canvas\Console\Commands\Update;
 use Canvas\Console\Commands\Install;
 use Canvas\Console\Commands\Version;
 use Maatwebsite\Excel\Facades\Excel;
+use Canvas\Console\Commands\Uninstall;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Scout\ScoutServiceProvider;
@@ -28,8 +29,6 @@ use Canvas\Extensions\ExtensionsServiceProvider;
 use TeamTNT\Scout\TNTSearchScoutServiceProvider;
 use Canvas\Http\Middleware\CheckForMaintenanceMode;
 use Larapack\ConfigWriter\Repository as ConfigWriter;
-use Proengsoft\JsValidation\Facades\JsValidatorFacade;
-use Proengsoft\JsValidation\JsValidationServiceProvider;
 use Illuminate\Database\Eloquent\Factory as EloquentFactory;
 use TalvBansal\MediaManager\Providers\MediaManagerServiceProvider;
 
@@ -56,6 +55,7 @@ class CanvasServiceProvider extends ServiceProvider
         Assets::class,
         Install::class,
         Version::class,
+        Uninstall::class,
     ];
 
     /**
@@ -180,7 +180,6 @@ class CanvasServiceProvider extends ServiceProvider
         $this->registerEloquentFactoriesFrom(__DIR__.'/../database/factories');
 
         // Register service providers...
-        $this->app->register(JsValidationServiceProvider::class);
         $this->app->register(ScoutServiceProvider::class);
         $this->app->register(ExcelServiceProvider::class);
         $this->app->register(MediaManagerServiceProvider::class);
@@ -188,7 +187,6 @@ class CanvasServiceProvider extends ServiceProvider
         $this->app->register(ExtensionsServiceProvider::class);
 
         // Register facades...
-        $loader->alias('JsValidator', JsValidatorFacade::class);
         $loader->alias('ConfigWriter', ConfigWriter::class);
         $loader->alias('Excel', Excel::class);
         $loader->alias('Settings', Settings::class);
