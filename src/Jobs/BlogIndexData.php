@@ -88,7 +88,7 @@ class BlogIndexData
             ->where('published_at', '<=', Carbon::now())
             ->where('is_published', 1)
             ->orderBy('published_at', 'desc')
-            ->simplePaginate(config('blog.posts_per_page'));
+            ->paginate(config('blog.posts_per_page'));
 
         return [
             'title' => Settings::where('setting_name', 'blog_title')->find(1),
