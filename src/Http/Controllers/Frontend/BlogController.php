@@ -3,13 +3,14 @@
 namespace Canvas\Http\Controllers\Frontend;
 
 use Auth;
-use Canvas\Models\Tag;
-use Canvas\Models\Post;
-use Canvas\Models\User;
-use Canvas\Models\Settings;
-use Illuminate\Http\Request;
-use Canvas\Jobs\BlogIndexData;
 use Canvas\Http\Controllers\Controller;
+use Canvas\Jobs\BlogIndexData;
+use Canvas\Models\Post;
+use Canvas\Models\PostTag;
+use Canvas\Models\Settings;
+use Canvas\Models\Tag;
+use Canvas\Models\User;
+use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
@@ -52,10 +53,37 @@ class BlogController extends Controller
             $tag = Tag::whereTag($tag)->firstOrFail();
         }
 
-        if (! $post->is_published && ! Auth::guard('canvas')->check()) {
+        if (!$post->is_published && !Auth::guard('canvas')->check()) {
             return redirect()->route('canvas.blog.post.index');
         }
 
         return view($post->layout, compact('post', 'tag', 'slug', 'title', 'user', 'css', 'js', 'socialHeaderIconsUser'));
+    }
+
+    /**
+     *
+     */
+    public function tags(Request $request)
+    {
+        $layout = config('blog.tags_layout') ? config('blog.tags_layout') : 'canvas::frontend.blog.tags';
+        $tags = PostTag::with('tags')
+            ->selectRaw('tag_id,count(*) as num')
+            ->groupBy('tag_id')
+            ->orderBy('num', 'desc')
+            ->get();
+        return view($layout, ['tags' => $tags]);
+    }
+
+    public function archives(Request $request)
+    {
+        $layout = config('blog.archives_layout') ? config('blog.archives_layout') : 'canvas::frontend.blog.archives';
+        // $tags = PostTag::with('tags')
+        //     ->selectRaw('tag_id,count(*) as num')
+        //     ->groupBy('tag_id')
+        //     ->orderBy('num', 'desc')
+        //     ->get();
+        $data = $this->dispatch(new BlogIndexData(null));
+        // dd($data);
+        return view($layout, $data);
     }
 }

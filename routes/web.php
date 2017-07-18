@@ -21,6 +21,8 @@ Route::group([
         Route::group(['prefix' => RouteHelper::getBlogPrefix()], function () {
             Route::get('/', 'Canvas\Http\Controllers\Frontend\BlogController@index')->name('canvas.blog.post.index');
             Route::get('post/{slug}', 'Canvas\Http\Controllers\Frontend\BlogController@showPost')->name('canvas.blog.post.show');
+            Route::get('/tags', 'Canvas\Http\Controllers\Frontend\BlogController@tags')->name('canvas.blog.post.tags');
+            Route::get('/archives', 'Canvas\Http\Controllers\Frontend\BlogController@archives')->name('canvas.blog.post.archives');
         });
 
         /* Authentication routes. */

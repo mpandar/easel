@@ -59,7 +59,7 @@ class BlogIndexData
             })
             ->where('is_published', 1)
             ->orderBy('published_at', $reverse_direction ? 'asc' : 'desc')
-            ->simplePaginate(config('blog.posts_per_page'));
+            ->paginate(config('blog.posts_per_page'));
 
         $posts->addQuery('tag', $tag->tag);
 

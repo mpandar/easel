@@ -24,4 +24,9 @@ class PostTag extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function tags()
+    {
+        return $this->belongsTo(Tag::class, 'tag_id', 'id');
+    }
 }

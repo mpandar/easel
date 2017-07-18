@@ -2,12 +2,14 @@
 
 namespace Canvas\Helpers;
 
-use ErrorException;
-use Canvas\Models\User;
+use Canvas\Extensions\ExtensionManager;
 use Canvas\Meta\Constants;
 use Canvas\Models\Settings;
+use Canvas\Models\User;
+use DOMDocument as DOMDocument;
+use DOMXPath as DOMXPath;
+use ErrorException;
 use Illuminate\Http\Request;
-use Canvas\Extensions\ExtensionManager;
 use Illuminate\Support\Facades\Session;
 
 class CanvasHelper extends Constants
@@ -105,7 +107,7 @@ class CanvasHelper extends Constants
         $version = $core->getVersion();
         $dist = $core->__get('dist');
         if (substr($version, 0, 4) === 'dev-') {
-            $version .= ' '.substr($dist['reference'], 0, 12);
+            $version .= ' ' . substr($dist['reference'], 0, 12);
         }
 
         // Save to Canvas Settings
@@ -127,5 +129,42 @@ class CanvasHelper extends Constants
     public static function getCurrentRelease()
     {
         return self::getCurrentVersion();
+    }
+
+    public static function closeAllHtmlTags($messyHtml)
+    {
+        $dom = new DOMDocument();
+        // Prevents errors and warnings
+        libxml_use_internal_errors(true);
+        $dom->loadHTML("<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"></head>{$messyHtml}");
+        $xpath = new DOMXPath($dom);
+        $node = $dom->getElementsByTagName('body')[0];
+        $validHtml = '';
+        $validHtml .= $dom->saveHTML($node);
+        // Removes '<body>' from the beginning of
+        // a string and '</body>' from it's end.
+        $validHtml = substr($validHtml, 6, -7);
+        return $validHtml;
+    }
+
+    static $postsDateLine = [];
+    public static function postsTimeLine($post)
+    {
+        $publishedDate = substr($post->published_at, 0, 10);
+        if (isset(self::$postsDateLine[$publishedDate])) {
+            self::$postsDateLine[$publishedDate]++;
+            return <<<EOF
+                <div><a href="{$post->url(null)}">$post->title</a></div>
+EOF;
+        } else {
+            self::$postsDateLine[$publishedDate] = 1;
+            return <<<EOF
+                <span>
+                    <b></b>
+                    <span> $publishedDate </span>
+                </span>
+                <div><a href="{$post->url(null)}">$post->title</a></div>
+EOF;
+        }
     }
 }
